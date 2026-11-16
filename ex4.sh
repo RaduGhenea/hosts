@@ -14,6 +14,6 @@ verify-IP() {
 	return $?
 }
 
-cat $HOME/etc/hosts | grep -v "^#" | while read addr name second rest; do
+cat "$1" | grep -v "^#" | while read addr name second rest; do
 	verify-IP $name
 done
